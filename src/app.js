@@ -3,7 +3,7 @@ const app = express();
 const log = console.log;
 
 app.get('', (req, res) => {
-    res.send("Hello Mutua! This is Express!");
+    res.send("<h1>Weather</h1>");
 });
 
 app.get('/help', (req, res) => {
@@ -11,11 +11,14 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.send("This is the about page");
+    res.send("<h1>This is the about page</h1>");
 });
 
 app.get('/weather', (req, res) => {
-    res.send("Here you can view your weather!");
+    res.send({
+        forecast: "The temp is 15 and humidity is 78%",
+        location: "Philadelphia"
+    });
 });
 
 app.listen(8080, () => {
