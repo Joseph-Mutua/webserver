@@ -46,6 +46,21 @@ app.get('/weather', (req, res) => {
     });
 });
 
+app.get('/help/*', (req, res) => {
+    res.render("404", {
+        title: 404,
+        name: "Joseph Mutua",
+        errorMessage: "Help Article not found!"
+    });
+});
+
+app.get('*', (req, res) => {
+    res.render("404", {
+        name: "Joseph Mutua",
+        errorMessage: "Page not Found!"
+    });
+});
+
 app.listen(8080, () => {
     console.log("Server is on port 8000");
 });
