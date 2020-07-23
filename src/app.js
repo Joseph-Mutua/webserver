@@ -2,11 +2,15 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-const log = console.log;
-
+//Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, '../templates');
 
+//Setup handlebars engine and views location
 app.set('view engine', 'hbs');
+app.set('views', viewsPath);
+
+//Setup static directory to serve
 app.use(express.static(publicDirPath));
 
 app.get('', (req, res) => {
@@ -38,5 +42,5 @@ app.get('/weather', (req, res) => {
 });
 
 app.listen(8080, () => {
-    log("Server is on port 8000");
+    console.log("Server is on port 8000");
 });
