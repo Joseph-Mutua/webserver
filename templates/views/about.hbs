@@ -2,13 +2,19 @@
 <html>
 
     <head>
+        <link rel="icon" href="/img/weather.png">
+        <title>About</title>
         <link rel="stylesheet" href="./css/styles.css">
     </head>
 
     <body>
-        {{>header}}
-        <img src="/img/weatherstack-forecast.gif">
-        <p>Created by {{name}}</p>
+
+        <div>
+            {{>header}}
+            <img class="portrait" src="/img/weatherstack-forecast.gif">
+            <p>Created by {{name}}</p>
+        </div>
+
         {{>footer}}
     </body>
 
