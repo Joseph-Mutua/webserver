@@ -40,9 +40,28 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            error: "You must provide an address!"
+        });
+    }
     res.send({
         forecast: "The temp is 15 and humidity is 78%",
-        location: "Philadelphia"
+        address: req.query.address
+    });
+});
+
+app.get('/product', (req, res) => {
+    if (!req.query.search) {
+        return res.send({
+            error: "You must provide a search term!"
+        });
+    }
+
+    console.log(req.query.search);
+
+    res.send({
+        products: []
     });
 });
 
@@ -60,6 +79,7 @@ app.get('*', (req, res) => {
         errorMessage: "Page not Found!"
     });
 });
+
 
 app.listen(8080, () => {
     console.log("Server is on port 8000");
