@@ -5,6 +5,7 @@ const forecast = require('./utils/forecast');
 const hbs = require('hbs');
 
 const app = express();
+const port = process.env.port || 8080
 
 //Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
@@ -98,6 +99,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(8080, () => {
-    console.log("Server is on port 8000");
+app.listen(port, () => {
+    console.log("Server is on port 8080");
 });
