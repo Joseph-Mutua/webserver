@@ -5,7 +5,7 @@ const forecast = require('./utils/forecast');
 const hbs = require('hbs');
 
 const app = express();
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 //Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
