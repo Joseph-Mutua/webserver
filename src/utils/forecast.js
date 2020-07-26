@@ -14,7 +14,10 @@ const forecast = (latitude, longitude, callback) => {
 
         else {
             const currWeather = body.current;
-            callback(undefined, `It is currently ${currWeather.temp} degrees celsius outside. The humidity is about ${currWeather.humidity} percent`);
+            callback(undefined, `It is currently ${currWeather.temp} degrees celsius outside but feels like${currWeather.feels_like}. 
+            The humidity is about ${currWeather.humidity} percent. Current visibility about ${currWeather.visiblity} Metres with ${currWeather.weather}.
+            Sunrise: ${currWeather.sunrise} UTC
+            Sunset: ${currWeather.sunset} UTC`);
         }
     });
 
